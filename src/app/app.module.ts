@@ -8,7 +8,8 @@ import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { RestaurantComponent } from './restaurant/restaurant.component';
 import { RestaurantsComponent } from './restaurants/restaurants.component';
-import { RestaurantsService } from "./restaurants/restaurants.service";
+import { HttpClientModule } from "@angular/common/http";
+import { RestaurantsService } from './restaurants/restaurants.service';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { RestaurantsService } from "./restaurants/restaurants.service";
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [
     RestaurantsService

@@ -8,12 +8,12 @@ import { RestaurantsService } from './restaurants.service';
 })
 export class RestaurantsComponent implements OnInit {
 
-  restaurants?: Restaurant[];
+  restaurants: Restaurant[] = [];
 
   constructor(private restaurantsService: RestaurantsService) { }
 
   ngOnInit() {
-    this.restaurants = this.restaurantsService.findAll();
+    this.restaurantsService.findAll().subscribe(restaurants => this.restaurants = restaurants);
   }
 
 }

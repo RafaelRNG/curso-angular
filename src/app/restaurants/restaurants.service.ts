@@ -12,6 +12,23 @@ export class RestaurantsService {
   constructor(private http: HttpClient) { }
 
   public findAll(): Observable<Restaurant[]> {
-    return this.http.get<Restaurant[]>(`${MEAT_API}/restaurants`);
+    return this.http.get<Restaurant[]>(`${MEAT_API}/restaurants`)
+
+  }
+
+  public findById(id: string): Observable<Restaurant> {
+    return this.http.get<Restaurant>(`${MEAT_API}/restaurants/${id}`)
   }
 }
+
+/*
+.pipe(
+  map((restaurants: Restaurant[]) => {
+    return restaurants;
+  }),
+  catchError((error: HttpResponse<any>) => {
+    console.log(error)
+    throw error.url;
+  })
+  )
+  */

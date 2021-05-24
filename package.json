@@ -24,8 +24,8 @@
     "intl": "1.2.5",
     "jquery": "3.1.1",
     "reflect-metadata": "0.1.9",
+    "rxjs": "^6.6.7",
     "ts-helpers": "1.1.2",
-    "rxjs": "~6.6.0",
     "tslib": "^2.1.0",
     "zone.js": "~0.11.4"
   },

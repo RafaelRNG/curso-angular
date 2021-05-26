@@ -282,3 +282,7 @@ body {
 .has-error-block {
    color: #dd4b39;
 }
+
+.btnCardLeft {
+   margin-right: 5px;
+}

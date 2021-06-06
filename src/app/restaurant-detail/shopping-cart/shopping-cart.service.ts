@@ -9,25 +9,33 @@ export class ShoppingCartService {
 
    items: CartItem[] = [];
 
-   clear() {
+   public clear() {
       this.items = [];
    }
 
-   addItem(item: MenuItem): void {
+   public addItem(item: MenuItem): void {
       let foundItem = this.items.find((mItem) => mItem.menuItem.id == item.id);
 
       if (foundItem) {
-         foundItem.quantity += 1
+         this.increaseQty(foundItem)
       } else {
          this.items.push(new CartItem(item))
       }
    }
 
-   removeItem(item: CartItem): void {
+   public increaseQty(item: CartItem) {
+      item.quantity += 1
+   }
+
+   public decreaseQty(item: CartItem) {
+      item.quantity -= 1
+   }
+
+   public removeItem(item: CartItem): void {
       this.items.splice(this.items.indexOf(item, 1));
    }
 
-   total(): number {
+   public total(): number {
       return this.items
          .map(item => item.value())
          .reduce((prev, value) => prev + value, 0)

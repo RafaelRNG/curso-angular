@@ -4,9 +4,6 @@
 <section class="content">
    <section class="invoice">
 
-      {{form.valid}}
-      {{form.value | json}}
-
       <form #form="ngForm" novalidate>
          <div class="row">
             <div class="col-xs-12">
@@ -40,7 +37,7 @@
                   <label class="control-label sr-only" for="inputSuccess"><i class="fa fa-check"></i>
                      Complemento</label>
                   <mt-input-container>
-                     <input name="optional" ngModel type="text" class="form-control" placeholder="Complemento">
+                     <input name="optionalAddress" ngModel type="text" class="form-control" placeholder="Complemento">
                   </mt-input-container>
                </div>
             </div>
@@ -68,7 +65,7 @@
                <p class="lead">Formas de Pagamento:</p>
 
                <div class="form-group">
-                  <mt-radio [options]="paymentOptions" name="paymentOption" ngModel></mt-radio>
+                  <mt-radio [options]="paymentOptions" name="paymentOption" ngModel required></mt-radio>
                </div>
 
             </div>
@@ -76,24 +73,9 @@
             <div class="col-sm-6 col-xs-12">
                <p class="lead">Frete e Total:</p>
 
-               <div class="table-responsive">
-                  <table class="table">
-                     <tbody>
-                        <tr>
-                           <th style="width:50%">Itens:</th>
-                           <td class="text-right">R$ 20,00</td>
-                        </tr>
-                        <tr>
-                           <th>Frete:</th>
-                           <td class="text-right">R$ 8,00</td>
-                        </tr>
-                        <tr>
-                           <th>Total:</th>
-                           <td class="text-right">R$ 28,00</td>
-                        </tr>
-                     </tbody>
-                  </table>
-               </div>
+               <mt-delivery-costs 
+                  [delivery]="delivery"
+                  [itemsValue]="itemsValue()"></mt-delivery-costs>
             </div>
             <!-- /.col -->
          </div>
@@ -102,7 +84,10 @@
 
       <div class="row">
          <div class="col-xs-12">
-            <button [disabled]="form.invalid" class="btn btn-success pull-right">
+            <button
+               (click)="checkOrder(form.value)"
+               [disabled]="form.invalid || cartItems().length === 0" 
+               class="btn btn-success pull-right">
                <i class="fa fa-credit-card"></i> Concluir Pedido
             </button>
          </div>

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
+import { OrderSummaryComponent } from './order-summary/order-summary.component';
 import { OrderComponent } from './order/order.component';
 import { MenuComponent } from './restaurant-detail/menu/menu.component';
 import { RestaurantDetailComponent } from './restaurant-detail/restaurant-detail.component';
@@ -20,7 +21,8 @@ const routes: Routes = [
     ]
   },
   { path: "about", component: AboutComponent },
-  { path: "order", component: OrderComponent }
+  { path: "order", component: OrderComponent },
+  { path: "order-summary", component: OrderSummaryComponent }
 ];
 
 @NgModule({

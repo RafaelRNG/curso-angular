@@ -23,11 +23,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from "@angular/common/http";
 import { FormsModule } from "@angular/forms";
+import { ReactiveFormsModule } from "@angular/forms";
 
 import { RestaurantsService } from './restaurants/restaurants.service';
 import { ShoppingCartService } from "./restaurant-detail/shopping-cart/shopping-cart.service";
 import { OrderService } from "./order/order.service";
 import { OrderSummaryComponent } from './order-summary/order-summary.component';
+import { RatingComponent } from './shared/rating/rating.component';
 
 registerLocaleData(prBr);
 
@@ -49,13 +51,15 @@ registerLocaleData(prBr);
     RadioComponent,
     OrderItemsComponent,
     DeliveryCostsComponent,
-    OrderSummaryComponent
+    OrderSummaryComponent,
+    RatingComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     RestaurantsService,

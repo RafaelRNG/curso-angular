@@ -12,9 +12,9 @@ import { Router } from "@angular/router";
 })
 export class OrderComponent implements OnInit {
 
-  emailPattern = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
+  emailPattern: RegExp = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
 
-  numberPattern = /^[0-9]*$/
+  numberPattern: RegExp = /^[0-9]*$/
 
   orderForm!: FormGroup
 

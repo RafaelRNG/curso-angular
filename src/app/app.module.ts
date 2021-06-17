@@ -2,7 +2,6 @@ import prBr from "@angular/common/locales/pt";
 import { registerLocaleData } from "@angular/common";
 
 import { AppComponent } from './app.component';
-import { AboutComponent } from './about/about.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { RestaurantComponent } from './restaurant/restaurant.component';
@@ -36,7 +35,6 @@ registerLocaleData(prBr);
 @NgModule({
   declarations: [
     AppComponent,
-    AboutComponent,
     HeaderComponent,
     HomeComponent,
     RestaurantComponent,

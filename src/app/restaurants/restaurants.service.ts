@@ -12,9 +12,10 @@ export class RestaurantsService {
 
   constructor(private httpClient: HttpClient) { }
 
-  public findAll(): Observable<Restaurant[]> {
-    return this.httpClient.get<Restaurant[]>(`${MEAT_API}/restaurants`)
-
+  public findAll(search?: string): Observable<Restaurant[]> {
+    return this.httpClient.get<Restaurant[]>(`${MEAT_API}/restaurants`, {
+      params: { q: search ? search : "" }
+    })
   }
 
   public findById(id: string): Observable<Restaurant> {

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core'
 import { ActivatedRoute } from '@angular/router';
 import { Restaurant } from '../restaurant/restaurant.model';
 
@@ -6,9 +6,11 @@ import { RestaurantsService } from "./../restaurants/restaurants.service";
 
 @Component({
   selector: 'mt-restaurant-detail',
-  templateUrl: './restaurant-detail.component.html'
+  templateUrl: './restaurant-detail.component.html',
 })
 export class RestaurantDetailComponent implements OnInit {
+
+  public isRow: string = "ready";
 
   restaurant: Restaurant = {};
 

@@ -1,0 +1,44 @@
+<h1>ngIf</h1>
+<p *ngIf="condition; else elseBlock">true</p>
+
+<ng-template #elseBlock>
+   <p>False</p>
+</ng-template>
+
+<hr>
+
+<h1>ngFor</h1>
+<p *ngIf="conditionClick">
+   verdadeiro
+</p>
+
+<p *ngIf="!conditionClick">
+   false
+</p>
+
+<button (click)="onClick()">Clicar</button>
+
+<ul>
+   <li *ngFor="let item of list; let i = index;" (click)="onClickEventList(i)">
+      [{{ i }}] - {{ item.nome }} - {{ item.idade }}
+   </li>
+</ul>
+
+<button (click)="onClickAddList()">adicionar</button>
+
+<hr>
+<h1>[ngSwitch]</h1>
+
+<input type="text" [(ngModel)]="nome">
+
+<div [ngSwitch]="nome">
+   <p *ngSwitchCase="'rafael'">
+      Rafael
+   </p>
+   <p *ngSwitchCase="'nay'">
+      Nay
+   </p>
+   <p *ngSwitchDefault>
+      Sem nome
+   </p>
+</div>

@@ -17,7 +17,25 @@ import {
   <!--DoCheck -->
   <!--rng-title *ngIf='destruir'> </!--rng-title-->
   <!--button (click)='destruirComponent()'>Destruir Component</!--button-->
-  <rng-data-biding> </rng-data-biding>
+  
+  <!-- Data binding -->
+  <!-- <rng-data-biding> </rng-data-biding> -->
+
+  <!-- Diretivas estruturais -->
+  <!-- <rng-diretivas-estruturais> </rng-diretivas-estruturais> -->
+
+  <!-- Diretivas atributos -->
+  <!-- 
+      <rng-diretivas-atributos>
+    <h1> Aulas de diretivas atributo </h1>
+    <hr>
+
+    <span class="mainContent">
+      este é um ótimo conteudo
+    </span>
+  </rng-diretivas-atributos>
+  -->
+  <rng-diretivas-atributos> </rng-diretivas-atributos>
   <router-outlet></router-outlet>
   `
 })

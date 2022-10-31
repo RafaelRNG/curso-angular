@@ -1,0 +1,54 @@
+<ng-content></ng-content>
+<!--
+   <div *ngIf="nome !== 'Rafael'">
+   <h1>[ngClass]</h1>
+   <h3 [ngClass]="{'active': valor, 'disabled': !valor}">NgClass</h3>
+
+   <hr>
+
+   <h1>[ngStyle]</h1>
+   <h3 [ngStyle]="{'font-size': heightPx, 'background': backgroundColor}"> ngStyle</h3>
+</div>
+
+<input type="text" [(ngModel)]="nome" (keydown.enter)="salvar()">
+<button (click)="salvar()">salvar</button>
+
+<li *ngFor="let item of list">
+   {{ item.nome }}
+</li>
+-->
+
+<!--
+   <h1>[ng-template]</h1>
+
+<ng-template ngFor let-item [ngForOf]="list">
+   <p>{{ item.nome }}</p>
+</ng-template>
+
+<input type="text" [(ngModel)]="nome" (keydown.enter)="salvar()">
+<button (click)="salvar()">salvar</button>
+-->
+
+<!--
+   <h1>[ng-content]</h1>
+
+<ng-content select="h1"></ng-content>
+<p>Lorem ipsum dolor sit amet.</p>
+<p>Lorem ipsum dolor sit amet.</p>
+<p>Lorem ipsum dolor sit amet.</p>
+<ng-content select="hr"></ng-content>
+<h1>outros conteúdos</h1>
+<ng-content select=".mainContent"></ng-content>
+-->
+
+<h1>Pipes</h1>
+
+<!--
+   <li *ngFor="let item of list">
+   {{ item.nome | uppercase }}
+</li>
+<input type="text" [(ngModel)]="nome" (keydown.enter)="salvar()">
+<button (click)="salvar()">salvar</button>
+-->
+
+{{ date |date: 'dd/MM/yyyy' }}

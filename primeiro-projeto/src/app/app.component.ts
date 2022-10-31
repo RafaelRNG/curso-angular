@@ -35,7 +35,11 @@ import {
     </span>
   </rng-diretivas-atributos>
   -->
-  <rng-diretivas-atributos> </rng-diretivas-atributos>
+  
+  <!-- Pipes -->
+  <!-- <rng-diretivas-atributos> </rng-diretivas-atributos> -->
+
+  <rng-new-component> </rng-new-component>
   <router-outlet></router-outlet>
   `
 })

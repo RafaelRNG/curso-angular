@@ -39,7 +39,23 @@ import {
   <!-- Pipes -->
   <!-- <rng-diretivas-atributos> </rng-diretivas-atributos> -->
 
-  <rng-new-component> </rng-new-component>
+  <!-- ngModule -->
+  <!-- <rng-new-component> </rng-new-component> -->
+
+  <!-- @Input() -->
+  <!-- 
+    <rng-input [contador]='addValue'> </rng-input>
+  <br>
+  <button (click)="add()">Add</button>
+  <input type="number" [(ngModel)]='addValue'>
+   -->
+
+   <ng-template [ngIf]="getDados">
+    <h1>{{ getDados.nome }}</h1>
+    <h2>{{ getDados.idade }}</h2>
+   </ng-template>
+   <rng-output (enviarDados)="setDados($event)"> </rng-output>
+
   <router-outlet></router-outlet>
   `
 })
@@ -47,6 +63,18 @@ export class AppComponent implements OnInit, DoCheck, AfterContentInit, AfterCon
 
   //public valor: number = 1
   //public destruir: boolean = true
+
+  public addValue: number = 0
+
+  public getDados!: { nome: string, idade: number }
+
+  public add() {
+    this.addValue += 1
+  }
+
+  public setDados(event: { nome: string, idade: number }) {
+    this.getDados = event
+  }
 
   public ngOnInit(): void {
     /**setTimeout(() => {

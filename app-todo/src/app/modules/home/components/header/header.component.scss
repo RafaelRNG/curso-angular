@@ -1,12 +1,12 @@
 @import '../../../../../dist/scss/variables.scss';
 
-h1 {
-   width: 100%;
-   padding: 15px 0;
-
-   text-align: center;
-   font-size: 18px;
-   
-   color: $secondary-text-color;
+.headerContainer {
    background-color: $tertiary-background-color;
+   height: 4rem;
+
+   h1 {      
+      color: $secondary-text-color;
+      font-size: 1.5rem;
+      margin-bottom: 0px;
+   }
 }

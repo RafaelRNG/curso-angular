@@ -1,0 +1,36 @@
+@import '../../../../../dist/scss/variables.scss';
+
+section {
+   width: 100%;
+   min-height: 250px;
+
+   background: $secondary-background-color;
+
+   &.loading {
+      background-image: url('../../../../../assets/imgs/bg-task.svg');
+      background-repeat: no-repeat;
+      background-position: center 30px;
+   }
+   
+   li {
+      input {
+         &[type='checkbox'] {
+            font-size: 1.2rem;
+         }
+         &[type='text'] {
+            width: 80%;
+            border: none;
+
+            font-size: 16px;
+            color: $primary-text-color;
+            &:focus {
+               border: none !important;
+               box-shadow: none;
+            }
+            &.checked {
+               text-decoration: line-through !important;
+            }
+         }
+      }
+   }
+}

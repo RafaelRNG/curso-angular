@@ -1,15 +1,41 @@
-<section class="mt-4 shadow">
-   <ul class="p-3">
-      <li class="d-flex align-items-center justify-content-between mb-3">
-         <input class="form-check-input mb-1" type="checkbox">
-         <input class="form-control" type="text">
+<section class="mt-4 shadow" [ngClass]="{'loading': !taskList.length}">
 
-         <button class="btn">
+   <ul *ngIf="taskList.length" class="p-3">
+      <li *ngFor="let item of taskList; let i = index;" class="d-flex align-items-center justify-content-between mb-3">
+         <input class="form-check-input mb-1" type="checkbox" [(ngModel)]="item.checked">
+         <input class="form-control" type="text" (keydown)="validationInput(item.task, i)" [(ngModel)]="item.task"
+            [ngClass]="{'checked': item.checked}">
+
+         <button (click)="deleteItemTaskList(i)" class="btn">
             <i class="fa fa-trash"></i>
          </button>
       </li>
    </ul>
+
 </section>
 
-<app-todo-input-add-itens></app-todo-input-add-itens>
-<app-todo-button-delete-all></app-todo-button-delete-all>
+<app-todo-input-add-itens (emitItemTaskList)="setEmitTaskList($event)"></app-todo-input-add-itens>
+<app-todo-button-delete-all data-bs-toggle="modal" data-bs-target="#staticBackdrop" *ngIf="taskList.length"
+   (click)="openModel()">
+</app-todo-button-delete-all>
+
+<!--Confirm modal-->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+   aria-labelledby="staticBackdropLabel" aria-hidden="true">
+   <div class="modal-dialog">
+      <div class="modal-content">
+         <div class="modal-header">
+            <h1 class="modal-title fs-5" id="staticBackdropLabel">Confirmação</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+         </div>
+         <div class="modal-body">
+            Deseja mesmo excluir todas as tarefas?
+         </div>
+         <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Não</button>
+            <button (click)="deleteAllTaskList()" data-bs-dismiss="modal" type="button"
+               class="btn btn-primary">Sim</button>
+         </div>
+      </div>
+   </div>
+</div>

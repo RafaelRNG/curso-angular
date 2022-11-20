@@ -50,12 +50,15 @@ import {
   <input type="number" [(ngModel)]='addValue'>
    -->
 
-   <ng-template [ngIf]="getDados">
+   <!--@Output() -->
+   <!-- 
+       <ng-template [ngIf]="getDados">
     <h1>{{ getDados.nome }}</h1>
     <h2>{{ getDados.idade }}</h2>
    </ng-template>
    <rng-output (enviarDados)="setDados($event)"> </rng-output>
-
+   -->
+  <rng-food-list> </rng-food-list>
   <router-outlet></router-outlet>
   `
 })

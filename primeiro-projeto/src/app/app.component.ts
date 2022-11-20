@@ -58,6 +58,7 @@ import {
    </ng-template>
    <rng-output (enviarDados)="setDados($event)"> </rng-output>
    -->
+   <rng-food-add> </rng-food-add>
   <rng-food-list> </rng-food-list>
   <router-outlet></router-outlet>
   `

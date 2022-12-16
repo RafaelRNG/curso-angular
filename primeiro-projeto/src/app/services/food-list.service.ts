@@ -8,7 +8,7 @@ import { FoodList } from '../module/food-list';
 })
 export class FoodListService {
 
-  public emitEvent = new EventEmitter()
+  public emitEvent = new EventEmitter<FoodList>()
 
   private list: Array<string> = ["X Bacon", "Feijão", "Ovo"]
 
@@ -22,16 +22,28 @@ export class FoodListService {
     }
    */
 
-  public foodList(): Observable<FoodList> {
-    return this.http.get<FoodList>(`${this.url}list-food`).pipe(res => res, error => error)
+  public foodList(): Observable<FoodList[]> {
+    return this.http.get<FoodList[]>(`${this.url}list-food`).pipe(res => res, error => error)
   }
 
-  public foodListAdd(value: string) {
+  /**
+   public foodListAdd(value: string) {
     this.foodListAlert(value)
     return this.list.push(value)
   }
+   */
 
-  private foodListAlert(value: string) {
+  public foodListAdd(value: string): Observable<FoodList> {
+    return this.http.post<FoodList>(`${this.url}list-food`, { nome: value })
+  }
+
+  /**
+   *   private foodListAlert(value: string) {
+    return this.emitEvent.emit(value)
+  }
+   */
+
+  public foodListAlert(value: FoodList) {
     return this.emitEvent.emit(value)
   }
 }

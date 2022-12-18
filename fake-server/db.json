@@ -1,20 +1,3 @@
 {
-  "list-food": [
-    {
-      "id": 1,
-      "nome": "X Bacon"
-    },
-    {
-      "id": 2,
-      "nome": "Feijão"
-    },
-    {
-      "id": 3,
-      "nome": "Ovo"
-    },
-    {
-      "id": 741,
-      "nome": ""
-    }
-  ]
+  "list-food": []
 }

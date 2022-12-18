@@ -22,4 +22,20 @@ export class FoodListComponent implements OnInit {
         this.foodListService.foodList().subscribe(res => this.foodList = res)
       })
   }
+
+  public foodListEdit(id: number, value: string) {
+    return this.foodListService.foodListEdit(id, value).subscribe({
+      next: console.log,
+      error: console.log
+    })
+  }
+
+  public foodListDelete(id: number) {
+    return this.foodListService.foodListDelete(id).subscribe({
+      next: (res) => {
+        this.foodList = this.foodList.filter(food => food.id != id)
+      },
+      error: console.log
+    })
+  }
 }

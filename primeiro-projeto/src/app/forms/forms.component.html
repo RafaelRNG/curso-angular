@@ -1,4 +1,4 @@
-<form #form="ngForm">
+<form #form="ngForm" (ngSubmit)="submitForm(form)">
    <span>
       <label for="">Nome: </label>
       <input type="text" name="nome" ngModel autocomplete="off">
@@ -14,7 +14,41 @@
       <br>
       <br>
 
+      <span>
+         <label for="">Angular: </label>
+         <input type="checkbox" name="angular" ngModel>
+         <label for="">Vue: </label>
+         <input type="checkbox" name="vue" ngModel>
+         <label for="">React: </label>
+         <input type="checkbox" name="react" ngModel>
+         <br>
+         <br>
+      </span>
    </span>
+
+   <select name="comidas" ngModel>
+      <option value="">Selecione um alimento</option>
+      <option *ngFor="let item of listComidas" [ngValue]="item">{{item.comida}}</option>
+   </select>
+   <br>
+   <br>
+
+   <label for="">sobrenome: </label>
+   <input type="text" name="sobrenome" #sobrenome="ngModel" [ngModel]="sobrenome.value" required>
+
+   <span *ngIf="sobrenome.invalid && (sobrenome.dirty && sobrenome.touched)">
+      Ivalid
+   </span>
+   <br>
+   <br>
+   <h5>valid</h5>{{ sobrenome.valid }}
+   <h5>dirty</h5>{{ sobrenome.dirty }}
+   <h5>touched</h5>{{ sobrenome.touched }}
+   <!-- 
+   {{ form.valid }}-->
+
+   <button type="submit" [disabled]="form.invalid">Enviar dados</button>
 </form>
 
-{{ form.value | json }}
+<br><br>
+<h2>{{ form.value | json }}</h2>

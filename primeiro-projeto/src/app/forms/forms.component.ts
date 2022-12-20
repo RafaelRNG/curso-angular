@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'rng-forms',
@@ -7,8 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormsComponent implements OnInit {
 
+  public listComidas: Array<{ comida: string }> = [
+    { comida: "X-Salada" },
+    { comida: "X-Bacon" },
+    { comida: "Coxinha" }
+  ]
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  public submitForm(form: NgForm) {
+    console.log(form.value)
   }
 }

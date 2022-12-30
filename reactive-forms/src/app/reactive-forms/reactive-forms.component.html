@@ -1,0 +1,50 @@
+<form [formGroup]="cadastroForm" (ngSubmit)="submitForm()">
+
+   <label>
+      nome: <input type="text" formControlName="firstName" #input>
+
+      <span
+         *ngIf="this.cadastroForm.get('firstName')?.errors && (this.cadastroForm.get('firstName')?.touched ||  this.cadastroForm.get('firstName')?.dirty)">
+         Favor adicionar o nome
+      </span>
+   </label>
+
+   <br>
+
+   <label>
+      lsobrenome: <input type="text" formControlName="lastName">
+
+      <span
+         *ngIf="this.cadastroForm.get('lastName')?.errors && (this.cadastroForm.get('lastName')?.touched ||  this.cadastroForm.get('lastName')?.dirty)">
+         Deve ter no minimo 5 e no maximo 10
+      </span>
+   </label>
+
+   <br>
+   <br>
+
+   <label>
+      email: <input type="email" formControlName="email">
+
+      <span
+         *ngIf="this.cadastroForm.get('email')?.errors && (this.cadastroForm.get('email')?.touched ||  this.cadastroForm.get('email')?.dirty)">
+         Deve ser um e-mail
+      </span>
+   </label>
+
+   <button [disabled]="this.cadastroForm.invalid" type="submit">Enviar</button>
+</form>
+
+<section>
+   <!--
+   <h3>{{ this.cadastroForm.get('lastName')?.errors | json }}</h3>
+
+-->
+   <h3>{{ this.cadastroForm.get('email')?.errors | json }}</h3>
+
+   <!--
+      <h3>{{ this.cadastroForm.get('firstName')?.errors | json }}</h3>
+   <h3>{{ this.cadastroForm.get('firstName')?.touched | json }}</h3>
+   <h3>{{ this.cadastroForm.get('firstName')?.dirty | json }}</h3>
+-->
+</section>

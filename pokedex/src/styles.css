@@ -1,0 +1,10 @@
+html {
+   font-family: 'Roboto', sans-serif;
+   background-color: var(--primary-color);
+}
+
+main {
+  max-width: 600rem;
+  margin: 0 auto;
+  box-sizing: border-box;
+}

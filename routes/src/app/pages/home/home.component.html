@@ -1,0 +1,18 @@
+<form class="d-flex flex-column align-items-center">
+   <div class="row col-6">
+      <label>id: </label>
+      <input class="form-control" type="number" [disabled]="this.isDisabled" (focus)="this.randomIdGenerated()" [(ngModel)]="id" [ngModelOptions]="{standalone: true}">
+   </div>
+
+   <div class="row col-6">
+      <label>username </label>
+      <input class="form-control cols-6" type="text" #username>
+   </div>
+
+   <div class="row col-6">
+      <label>params </label>
+      <input class="form-control cols-6" type="text" #params>
+   </div>
+   
+   <button (click)="this.navigateToAbout(''+this.id, username.value, params)" class="btn btn-outline-dark btn-lg col-6 mt-3">Ir para pagina sobre</button>
+</form>

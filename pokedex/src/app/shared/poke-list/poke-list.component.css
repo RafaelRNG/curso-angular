@@ -1,0 +1,113 @@
+.list__container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  padding: 0 10px;
+}
+
+.pokemon {
+  position: relative;
+  display: flex;
+  background: #fafafa;
+
+  min-width: 45%;
+  min-height: 117px;
+  padding: 20px;
+
+  margin-bottom: 10px;
+
+  border-radius: 10px;
+
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+.pokemon__status h2 {
+  font-size: 22px;
+  font-style: italic;
+  font-weight: 700;
+  text-transform: capitalize;
+
+  margin-bottom: 10px;
+}
+
+.pokemon__status ul {
+  display: flex;
+  flex-direction: column;
+}
+
+.pokemon__status li {
+  background: var(--gray-color);
+  font-size: 13px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 50px;
+
+  min-width: 60px;
+  margin: 5px 0;
+  padding: 3px;
+}
+
+.pokemon__image {
+  position: absolute;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 80px;
+  width: 100px;
+
+  right: 25px;
+  bottom: 25px;
+  background: url("../../../assets/imgs/bg-bolinha.svg") no-repeat;
+}
+
+.pokemon__image img {
+  width: 60px;
+}
+
+@media (max-width: 832px) {
+  a {
+    width: 100% !important;
+    margin: 0 5px;
+  }
+}
+
+/*Animation*/
+.zoomIn {
+  -webkit-animation-name: zoomIn;
+  animation-name: zoomIn;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  animation-delay: 160ms;
+}
+
+@-webkit-keyframes zoomIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,25 @@
+form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  max-width: 45rem;
+  margin: 0 auto 50px auto;
+  padding: 15px 20px;
+
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+input {
+  width: 95%;
+  font-size: 18px;
+
+  background: none;
+  border: none;
+  outline: transparent;
+}
+
+input,
+input::placeholder {
+  color: var(--light);
+}

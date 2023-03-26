@@ -1,10 +1,10 @@
 html {
-   font-family: 'Roboto', sans-serif;
-   background-color: var(--primary-color);
+  font-family: "Roboto", sans-serif;
+  background-color: var(--primary-color);
 }
 
 main {
-  max-width: 600rem;
+  max-width: 100rem;
   margin: 0 auto;
   box-sizing: border-box;
 }
